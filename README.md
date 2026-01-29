@@ -1,6 +1,10 @@
 ## CSIRO Image2Biomass: Multi-Stage Biomass Prediction
 LINK: https://www.kaggle.com/competitions/csiro-biomass
 
+<p align="center">
+  <img src="assets/Biomass Prediction H.png" width="600">
+</p>
+
 This repository contains the implementation of two deep learning architectures developed for the **CSIRO Image2Biomass Prediction** challenge. The project focuses on estimating five biomass components—**Dry Clover, Dry Dead, Dry Green, Dry Total, and GDM (Green Dry Matter)**—directly from RGB field imagery.
 
 ---
