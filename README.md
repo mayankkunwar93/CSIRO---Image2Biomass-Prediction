@@ -1,5 +1,5 @@
 ## CSIRO Image2Biomass: Multi-Stage Biomass Prediction
-
+LINK: https://www.kaggle.com/competitions/csiro-biomass
 This repository contains the implementation of two deep learning architectures developed for the **CSIRO Image2Biomass Prediction** challenge. The project focuses on estimating five biomass components—**Dry Clover, Dry Dead, Dry Green, Dry Total, and GDM (Green Dry Matter)**—directly from RGB field imagery.
 
 ---
@@ -78,5 +78,12 @@ For transparency, the following taxonomy was used to enrich the metadata feature
 
 ## Project Structure
 
-* `model_training_dinov2_basic.py`: Training script for the DINOv2 Regressor.
-* `model_training_dinov3_with_teacher.py`: Implementation of the DINOv3 Teacher-Student framework.
+ * `model_training_dinov2_basic.py`: Training script for the DINOv2 Regressor.
+ * `model_training_dinov3_with_teacher.py`: Implementation of the DINOv3 Teacher-Student framework.
+
+Data Attribution
+ The dataset for this project is sourced from the CSIRO - Image2Biomass Prediction competition on Kaggle.
+
+Source: https://www.kaggle.com/competitions/csiro-biomass
+
+License: Access to this data is governed by the CSIRO competition rules. Users must download the data directly from Kaggle to run the scripts in this repository.
