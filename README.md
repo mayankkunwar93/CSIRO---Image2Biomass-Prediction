@@ -34,6 +34,25 @@ Model 2 evolves the approach into a multi-modal, multi-scale framework that inco
   * **Global + Local Crops:** Simultaneously processes a global image and **4 high-resolution corner crops**.
   * **Crop Attention Head:** A dedicated head calculates importance weights for each crop, allowing the model to focus on the most biomass-dense regions before final feature fusion.
 
+## Citation
+
+**BibTeX:**
+
+```bibtex
+@misc{kunwar2026csirobiomass,
+  author = {Kunwar, Mayank},
+  title = {CSIRO - Image2Biomass Prediction: Optimized DINOv3 with Teacher-Student Distillation},
+  year = {2026},
+  publisher = {GitHub},
+  journal = {GitHub Repository},
+  howpublished = {\url{https://github.com/mayankkunwar93/CSIRO---Image2Biomass-Prediction}}
+}
+
+```
+
+**APA:**
+
+Kunwar, M. (2026). *CSIRO - Image2Biomass Prediction: Optimized DINOv3 with Teacher-Student Distillation*. GitHub Repository. [https://github.com/mayankkunwar93/CSIRO---Image2Biomass-Prediction](https://www.google.com/url?sa=E&source=gmail&q=https://github.com/mayankkunwar93/CSIRO---Image2Biomass-Prediction)
 
 * **Teacher-Student Knowledge Distillation:**
   * An auxiliary **Teacher NN** is trained on non-image metadata: **NDVI, Plant Height, Seasonality (Month), and Species Taxonomy**.
