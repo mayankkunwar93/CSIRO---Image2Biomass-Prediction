@@ -251,8 +251,7 @@ class DinoV3Backbone(nn.Module):
         for p in self.model.parameters():
             p.requires_grad = False
 
-        # 2. Unfreeze fewer layers? With 357 images, unfreezing 20 layers is risky.
-        # Consider reducing layer_unfreeze to 4-8 if you see validation loss rising.
+        # 2. Unfreeze
         if layer_unfreeze > 0:
             for p in self.model.layer[-layer_unfreeze:].parameters():
                 p.requires_grad = True
