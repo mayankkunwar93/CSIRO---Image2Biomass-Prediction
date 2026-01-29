@@ -26,20 +26,39 @@ Model 1 establishes a robust baseline by leveraging Self-Supervised Learning (SS
 Model 2 evolves the approach into a multi-modal, multi-scale framework that incorporates domain-specific metadata and spatial attention logic.
 
 * **Multi-Scale Attention Fusion:**
-  * **Global + Local Crops:** Simultaneously processes a global image and **4 high-resolution corner crops**.
-  * **Crop Attention Head:** A dedicated head calculates importance weights for each crop, allowing the model to focus on the most biomass-dense regions before final feature fusion.
+ * **Global + Local Crops:** Simultaneously processes a global image and **4 high-resolution corner crops**.
+ * **Crop Attention Head:** A dedicated head calculates importance weights for each crop, allowing the model to focus on the most biomass-dense regions before final feature fusion.
 
 
 * **Teacher-Student Knowledge Distillation:**
-  * An auxiliary **Teacher NN** is trained on non-image metadata: **NDVI, Plant Height, Seasonality (Month), and Species Multi-hot encoding**.
-  * The image-based Student model is supervised by both ground truth and Teacher predictions, effectively grounding visual features in biological reality.
+ * An auxiliary **Teacher NN** is trained on non-image metadata: **NDVI, Plant Height, Seasonality (Month), and Species Taxonomy**.
+ * The image-based Student model is supervised by both ground truth and Teacher predictions, effectively grounding visual features in biological reality.
+
+
+* **Taxonomic Feature Engineering:**
+The model utilizes a custom hierarchical mapping to transform 15+ species labels into a structured multi-hot vector. This allows the model to share weights across similar plant functional types:
+ * **Grassy types:** Anchored with a "grass" tag (e.g., BarleyGrass, Ryegrass).
+ * **Clovers:** Influence the specific Clover prediction head (e.g., Subclover, WhiteClover).
+ * **Legumes & Weeds:** Categorized into "legume" or "broadleaf" to account for different leaf-to-stem ratios.
 
 
 * **Biological Logic & Loss:**
-  * **Ratio Protection:** Uses **KL Divergence** to enforce realistic proportions between components (e.g., ensuring GDM and Dead components logically sum toward the Total).
-  * **Subspecies Integration:** Maps 12+ species/subspecies (BarleyGrass, Lucerne, etc.) into the feature space to account for varying plant densities and growth patterns.
-  * **Weighted Huber Loss:** Replaces MSE with Huber loss to provide better robustness against outliers in the biomass measurements.
+ * **Ratio Protection:** Uses **KL Divergence** to enforce realistic proportions between components (e.g., ensuring GDM and Dead components logically sum toward the Total).
+ * **Weighted Huber Loss:** Replaces MSE with Huber loss to provide better robustness against outliers in the biomass measurements.
 
+
+---
+
+### Species to Subspecies Mapping Logic
+
+For transparency, the following taxonomy was used to enrich the metadata features:
+
+| Category | Subspecies Tags |
+| --- | --- |
+| **Grasses** | Barley, Brome, Fescue, Phalaris, Rye, Silver, Spear |
+| **Clovers** | White, Subclover, Dalkeith, Losa |
+| **Legumes** | Lucerne |
+| **Broadleaf** | Capeweed, Crumbweed |
 
 
 ---
