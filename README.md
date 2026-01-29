@@ -82,7 +82,7 @@ For transparency, the following taxonomy was used to enrich the metadata feature
  * `model_training_dinov2_basic.py`: Training script for the DINOv2 Regressor.
  * `model_training_dinov3_with_teacher.py`: Implementation of the DINOv3 Teacher-Student framework.
 
-Data Attribution
+## Data Attribution
  The dataset for this project is sourced from the CSIRO - Image2Biomass Prediction competition on Kaggle.
 
 Source: https://www.kaggle.com/competitions/csiro-biomass
