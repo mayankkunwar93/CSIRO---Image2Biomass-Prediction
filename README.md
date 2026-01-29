@@ -83,8 +83,26 @@ For transparency, the following taxonomy was used to enrich the metadata feature
 
 ## Project Structure
 
- * `model_training_dinov2_basic.py`: Training script for the DINOv2 Regressor.
- * `model_training_dinov3_with_teacher.py`: Implementation of the DINOv3 Teacher-Student framework.
+The repository is organized into two distinct experimental versions:
+
+`src/v1_dinov2_baseline/`
+Standard DINOv2 implementation used to establish performance benchmarks.
+
+  * `train.py`: Main script for K-Fold baseline training.
+  * `models.py`: DINOv2 backbone with a hierarchical MLP regression head.
+  * `dataset.py`: Single-view image loading and standard augmentations.
+  * `utils.py`: Weighted MSE loss and baseline R2 metrics.
+
+`src/v2_dinov3_optimized/`
+Proposed DINOv3 architecture with Multi-Scale Attention and Knowledge Distillation.
+
+  * `train.py`: Coordinates the Teacher-Student training loop and metadata integration.
+  * `models.py`: Features the DINOv3 backbone, Attention Pooling, and Teacher NN architecture.
+  * `dataset.py`: Implements Global + 4-Corner Crop logic for high-resolution feature extraction.
+  * `utils.py`: Contains advanced Taxonomic Mapping and the Huber + KL Divergence loss function.
+
+---
+
 
 ## Data Attribution
  The dataset for this project is sourced from the CSIRO - Image2Biomass Prediction competition on Kaggle.
