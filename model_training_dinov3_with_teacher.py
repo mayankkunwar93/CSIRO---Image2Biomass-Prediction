@@ -1,5 +1,5 @@
 # ============================================================
-# FULL DINOv3 RGB TRAINING (LOG TARGETS) WITH DEPTH MAPS + SUBSPECIES AUX
+# FULL DINOv3 RGB TRAINING (LOG TARGETS) + SUBSPECIES AUX
 # 4-HEAD OUTPUT: Total, GDM, Green, Clover | Dead derived
 # ============================================================
 
